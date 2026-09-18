@@ -1,0 +1,28 @@
+[project]
+name = "weather-intelligence-api"
+version = "1.0.0"
+description = "FastAPI service forecasting weather-derived indices for Sydney."
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "fastapi",
+    "uvicorn",
+    "mlkit-aby==0.3.0",
+    # Pinned to the version the models were trained with. Saved models can
+    # fail to load, or behave differently, under another scikit-learn version.
+    "scikit-learn==1.9.1",
+]
+
+# This project is an application, not a library, so uv should only install
+# its dependencies rather than trying to build it as a package.
+[tool.uv]
+package = false
+
+# mlkit-aby is published on TestPyPI; everything else comes from PyPI.
+[[tool.uv.index]]
+name = "testpypi"
+url = "https://test.pypi.org/simple/"
+explicit = true
+
+[tool.uv.sources]
+mlkit-aby = { index = "testpypi" }

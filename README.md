@@ -108,6 +108,15 @@ uv run uvicorn app.main:app --reload
 
 Then open <http://localhost:8000/docs>.
 
+## Running the tests
+
+```bash
+uv run pytest
+```
+
+The tests cover every endpoint and each error case. The prediction tests call
+the live Open-Meteo API, so they need an internet connection.
+
 ## Deployment on Render
 
 The API is deployed on [Render](https://render.com) as a Docker web service.
@@ -132,6 +141,7 @@ weather-intelligence-api/
 ├── app/
 │   └── main.py        # FastAPI application and endpoints
 ├── models/            # Trained model files (.joblib)
+├── tests/             # Automated tests for every endpoint
 ├── Dockerfile         # Instructions for building the Docker image
 ├── pyproject.toml     # Dependencies
 └── README.md

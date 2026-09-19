@@ -26,3 +26,11 @@ explicit = true
 
 [tool.uv.sources]
 mlkit-aby = { index = "testpypi" }
+
+# Only needed to run the tests, not to run the API.
+[dependency-groups]
+dev = ["pytest", "httpx"]
+
+# Lets the tests import the `app` folder.
+[tool.pytest.ini_options]
+pythonpath = ["."]

@@ -7,7 +7,8 @@ Australia, using machine learning models trained on historical data from the
 **Abhishek Chopda** — Student ID **25611094**
 36120 Advanced Machine Learning Application — Assessment Task 2
 
-**Live API:** _to be added after deployment_
+**Live API:** <https://weather-intelligence-api-s6rd.onrender.com>
+**Interactive docs:** <https://weather-intelligence-api-s6rd.onrender.com/docs>
 
 ---
 

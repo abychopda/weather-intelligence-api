@@ -162,3 +162,9 @@ weather-intelligence-api/
   It should not be used for safety decisions. See `/model-metadata` for
   per-class performance.
 - Predictions depend on the Open-Meteo API being available.
+- The models assume a prediction for a date is made once that day is complete,
+  because the features include that day's full 24 hours of weather. If the API
+  is called with **today's** date, Open-Meteo supplies the hours that have not
+  happened yet from its forecast model, so the request still succeeds but uses
+  partly estimated rather than fully observed weather. Requests for dates fully
+  in the past use observations only, which matches how the models were trained.
